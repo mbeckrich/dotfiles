@@ -1,0 +1,49 @@
+theme="flatwhite"
+
+[editor]
+auto-completion = false
+auto-format = true
+auto-pairs = false
+auto-save = true
+cursorline = true
+gutters = ["line-numbers", "spacer", "diagnostics", "spacer", "diff"]
+line-number = "absolute"
+scrolloff = 10
+shell = ["fish", "-c"]
+text-width = 79
+true-color = true
+
+[editor.cursor-shape]
+insert = "block"
+normal = "bar"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+
+[editor.lsp]
+display-messages = true
+snippets = false
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25
+max-indent-retain = 50
+wrap-at-text-width = true
+
+[editor.statusline]
+left = ["mode", "spinner", "total-line-numbers"]
+center = ["file-name", "spacer", "version-control", "spacer", "file-modification-indicator"]
+right = ["file-type", "diagnostics", "position", "file-encoding"]
+separator = "::"
+
+# Keys
+
+[keys.insert]
+S-tab = "unindent"
+C-a = "normal_mode"
+
+[keys.normal]
+C-q = ":wq"

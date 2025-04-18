@@ -1,0 +1,75 @@
+[[language]]
+name = "html"
+formatter = { command = 'prettier', args = [
+  "--parser",
+  "html",
+  "--config",
+  ".prettierrc.yml",
+] }
+auto-format = true
+
+[[language]]
+name = "json"
+formatter = { command = 'prettier', args = [
+  "--parser",
+  "json",
+  "--config",
+  ".prettierrc.yml",
+] }
+auto-format = true
+
+[[language]]
+name = "javascript"
+formatter = { command = 'prettier', args = [
+  "--parser",
+  "typescript",
+  "--config",
+  ".prettierrc.yml",
+] }
+auto-format = true
+
+[[language]]
+name = "yaml"
+file-types = ["yaml", "yml"]
+formatter = { command = 'prettier', args = [
+  "--parser",
+  "yaml",
+  "--config",
+  ".prettierrc.yml",
+] }
+auto-format = true
+
+[[language]]
+name = "markdown"
+formatter = { command = 'prettier', args = [
+  "--parser",
+  "markdown",
+  "--config",
+  ".prettierrc.yml",
+] }
+auto-format = true
+
+[[language]]
+name = "fish"
+formatter = { command = "fish_indent" }
+auto-format = true
+
+[[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["fmt", "-"] }
+
+[[language]]
+name = "ruby"
+language-servers = ["rubocop", { name = "solargraph", except-features = [ "format", "diagnostics" ] }]
+auto-format = true
+
+[language-server.solargraph]
+command = "/Users/danillos/.rbenv/shims/solargraph"
+args = ["stdio"]
+config = { diagnostics = false, formatting = false }
+
+[language-server.rubocop]
+command = "/Users/danillos/.rbenv/shims/rubocop"
+args = ["--lsp", "--stderr", "--fail-level", "fatal"]
+timeout = 3
+

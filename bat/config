@@ -1,0 +1,16 @@
+# bat --list-themes to view bundled themes
+--theme="ansi"
+
+# Forces colorized output for fzf
+--color=always
+
+# Enables italics
+#--italic-text=always
+
+# Uncomment the following line to disable automatic paging:
+#--paging=never
+
+# Use INI syntax highlighting for .conf
+--map-syntax="*.conf:INI"
+
+--style="numbers,changes,header,grid"

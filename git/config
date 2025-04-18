@@ -1,0 +1,60 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[user]
+	name = marshall beckrich
+	email = m@mkb.sh
+
+[include]
+	path = secrets
+
+[core]
+	editor = subl -n -w
+	excludesFile = ~/.config/git/.gitignore
+	pager = delta
+
+[branch]
+	sort = -committerdate
+
+[pager]
+	blame = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	features = side-by-side line-numbers decorations
+	navigate = true
+	true-color = always
+	syntax-theme = base16
+
+[init]
+	defaultBranch = main
+
+[merge]
+  conflictStyle = zdiff3
+
+[diff]
+	algorithm = histogram
+	colorMoved = default
+
+[status]
+	short = true
+
+[color]
+	ui = true
+
+[commit]
+	verbose = true
+	template = ~/.config/git/.gitmessage
+	gpgSign = true
+
+[tag]
+	gpgSign = true
+	sort = version:refname
+
+[log]
+	date = local
